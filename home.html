@@ -1,0 +1,67 @@
+<!-- This is design file of random password generator app with tailwind css 
+Sequence of components:
+1. Contains a text field in which final output will be
+2. Input field to get the length of password / having label named as "Length of Password"
+3. Checkboxes for different options like Uppercase, Lowercase, Numbers, Special Characters
+4. Button to generate password
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Add favicon -->
+    <link rel="icon" href="psw_favicon.png" type="image/x-icon">
+</head>
+
+<body class="bg-gray-200">
+    <!-- An effective background of gradient, that covers hold body  -->
+    <div class="bg-gradient-to-r from-indigo-500 to-blue-500 h-screen">
+        <div class="container mx-auto p-4">
+            <h1 class="text-2xl font-bold text-white text-center">Random Password Generator</h1>
+            <div class="bg-white p-4 rounded-lg shadow-lg mt-4">
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="text" id="password"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        readonly>
+                </div>
+                <div class="mb-4">
+                    <label for="length" class="block text-sm font-medium text-gray-700">Length of Password</label>
+                    <!-- An input field to get length of password, maximum can be 30, if user gives wrong input the border should be red -->
+                    <input type="number" id="length" min="1" max="30"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700">Choose which to include</label>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="uppercase" class="mr-2">
+                        <label for="uppercase" class="text-sm font-medium text-gray-700">Uppercase</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="lowercase" class="mr-2">
+                        <label for="lowercase" class="text-sm font-medium text-gray-700">Lowercase</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="numbers" class="mr-2">
+                        <label for="numbers" class="text-sm font-medium text-gray-700">Numbers</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="specialChar" class="mr-2">
+                        <label for="special" class="text-sm font-medium text-gray-700">Special Characters</label>
+                    </div>
+                </div>
+                <button id="generateBtn"
+                    class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Generate
+                    Password</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
